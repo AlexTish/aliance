@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;  
 }
-body{   
+body{  
     max-width: 1920px;
     margin: 0 auto;
     font-family: "Noto Sans", sans-serif;;
@@ -12,12 +12,41 @@ body{
     align-items: center;
     color: #fff;
     height: 94px;
+    max-width: 1920px;
+    margin: 0 auto; /* Центрируем */
+    padding: 0 20px; /* Добавляем отступы по бокам */
+    width: 100%;
+}
+/* Полный сброс стилей ссылок */
+a{
+    color: inherit; /* Наследует цвет родителя */
+    text-decoration: none; /* Убирает подчёркивание */
+} 
+.header{
+    min-height: 100vh;
+}
+.header-image{
+    background-image: url('../img/header-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.header-image::before {
+    content:'';
+    position: absolute;
+    background-color: rgba(41, 45, 51, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .header-logo{
     padding: 25px 50px;
 }
 .header-nav{
     display: flex;
+    align-items: center;
     flex-basis: 100%; 
     list-style: none;
     padding: 0 50px;
