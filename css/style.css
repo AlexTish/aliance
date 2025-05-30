@@ -10,8 +10,8 @@
     font-display: swap;
 }
 body{  
-    width: 1920px;
-    margin: 0 auto;
+    /*width: 100%;
+    margin: 0 auto;*/
     font-family: "Noto Sans", sans-serif;
 }
 .container{
@@ -26,6 +26,7 @@ body{
     height: 94px; 
     position: relative;
     border-bottom: 1px solid rgba(235, 235, 240, 0.2);
+    
 }
 /* Полный сброс стилей ссылок */
 a{
@@ -88,7 +89,7 @@ a{
     font-size: 16px;
 }
 .button{
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 16px;
     line-height: 160%;
     color:#ffffff;
