@@ -41,6 +41,9 @@ body{
     color: #292D33;
     height: 4.625rem;
 }
+.phone-icon{
+    fill:#f4f7fb;
+}
 .logo-svg{
     width: 8.75rem;
     height: 2.75rem;
@@ -131,10 +134,13 @@ a{
     padding: .75rem 3.25rem;
     letter-spacing: 0.14px;
 }
+.navbar-button .button-icon{
+    display: none;
+}
 .header-button{
     height: 100%;
 }
-.seporator{
+.separator{
     background: #5c8ee6;
     width: 9.4375rem;
     height: 2px;
@@ -275,8 +281,3 @@ a{
     width: 2.5rem;
     margin-right: 1.25rem;
 }
-@media (max-width: 1700px){
-    html{
-        font-size: 14px;
-    }
-} 
