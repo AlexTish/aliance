@@ -17,6 +17,9 @@ body{
     margin: 0 auto;*/
     font-family: "Noto Sans", sans-serif;
 }
+.mobile-menu{
+    display: none;
+}
 .container{
     max-width: 90rem;
     margin: auto;
