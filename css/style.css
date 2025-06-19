@@ -309,6 +309,9 @@ a{
     {
         padding-right: 2rem;
     }
+    .steps-item:nth-child(2) {
+        margin-left: 0;
+    }
 }
 @media (max-width: 1200px){
     .container{
