@@ -364,7 +364,10 @@ a{
         padding-left: 2rem;
         padding-right: 2rem;
     }
-    .slider-buttons {
+    .slider-buttons{
+        display: flex;
+    }
+    .steps-buttons{
         display: flex;
     }
 }
