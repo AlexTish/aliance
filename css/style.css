@@ -175,6 +175,7 @@ a{
     margin-bottom: 3.125rem;
     letter-spacing: 0.09px;
     word-spacing: 0.65px;
+    height: 100%;
 }
 .header-features{
     display: flex;
@@ -187,7 +188,7 @@ a{
 }
 .header-features-item{
     padding: 1.875rem 3.125rem;
-    min-height: 100%;
+    height: auto;
     max-width: 20.625rem; 
     border: 1px solid rgba(235, 235, 240, 0.2);
     /* flex: 1; */

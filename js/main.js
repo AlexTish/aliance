@@ -40,7 +40,7 @@ mMenuToggle.addEventListener('click', (event) => {
 
 const swiper = new Swiper('.swiper', {   // 39 https://swiperjs.com/swiper-api#initialize-swiper и https://swiperjs.com/swiper-api#navigation
     speed: 400,
-    autoHeight: true,
+    // autoHeight: true,
     // loop: true,   
     slidesPerView: 5,
     navigation: {
