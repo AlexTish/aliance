@@ -63,7 +63,7 @@ a{
     text-decoration: none; /* Убирает подчёркивание */
 } 
 .header{
-    height: 60.625rem;
+    /* max-height: 60.625rem;   */
     padding-top: 5.875rem;
     /* min-height: 100vh; */
     overflow: hidden;
@@ -214,6 +214,7 @@ a{
     min-height: 10.5rem;
     padding: 0;
     margin-top: 6.25rem;
+    margin-bottom: 0px;
     list-style: none;
     color: #fff;
     position: relative;
@@ -223,7 +224,7 @@ a{
     height: auto;
     max-width: 20.625rem; 
     border: 1px solid rgba(235, 235, 240, 0.2);
-    /* flex: 1; */
+    flex: 1; 
 }
 .slider-buttons {
     display: none;
@@ -277,31 +278,30 @@ a{
 .section{
     margin-top: 9.375rem;
     margin-bottom: 9.375rem;
-
 }
 .section-title{
     font-family: "Bebas Neue Book";
     font-size: 3.75rem;
     line-height: 120%;
+    letter-spacing: 0.3px;
     color: #292D33;
     margin-top: 1.8125rem;
-}
-.swiper-wrapper{
-    margin: 0px 0px;
-    padding-left: 0px;
 }
 .steps{
     display: flex;
     list-style: none;
     padding: 0;
-    gap: 1.8125rem;
+    /* gap: 1.8125rem; */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .steps-item{
     min-width: 20.625rem;
     min-height: 100%;
+    flex: 1;
 }
-/* .steps-item:nth-child(2) {
-    margin-left: -60px;
+/* .steps-item:nth-child(2){
+    margin-left: -60px; 
 } */
 .steps-num{
     font-family: "Bebas Neue Book";
@@ -372,7 +372,7 @@ a{
 }
 .card{
     text-decoration: none;
-    flex-basis: 33%;
+    flex-basis: 33.3%;
     border: 1px solid #ebebf0;
     position: relative;
     transition: border 0.2s;
@@ -387,7 +387,7 @@ a{
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 90%;
+    width: 92%;
     z-index: 0;
 }
 .card-content{
@@ -398,7 +398,7 @@ a{
     font-weight: 400;
     line-height: 140%;
     color: rgb(41, 45, 51);
-    margin-top: 0;
+    margin-top: 2px;
     margin-bottom: 0.625rem;
     transition: color 0.2s;
 }
@@ -407,7 +407,62 @@ a{
     font-weight: 400;
     line-height: 160%;
     color: rgb(130, 138, 153);
-    margin-bottom: 23.4375rem;
+    margin-top: 13px;
+    margin-bottom: 355px;
+}
+.section.trademarks{
+    padding-top: 1px;
+}
+.brands{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.brand{
+    display: flex;
+    text-decoration: none;
+    flex-basis: 50%;  
+    border: 1px solid #ebebf0;
+    box-sizing: border-box; /* Важно для правильного расчета ширины */
+    padding: 20px; /* Внутренние отступы вместо margin у лого */
+    align-items: center; /* Выравниваем по центру вертикально */
+}
+.brand-title{
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 160%;
+    margin-top: -43px;
+    margin-left: 43px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    letter-spacing: -1px;
+}
+.brand-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    margin-top: 12px;
+    margin-left: 43px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+.logo-brand{
+    width: auto; /* Автоматическая ширина */
+    max-width: 140px; /* Максимальный размер */
+    height: auto; /* Сохраняем пропорции */
+    margin: 0 30px 0 48px; /* Отступ только справа */
+    flex-shrink: 0; /* Запрещаем уменьшение */
+}
+.brand-content{
+    margin: 70px 50px 50px 0px;
+}
+.logo-brand.agtech{
+    width: 140px; 
+}
+.logo-brand.ap {
+    width: 103px; 
+    height: 140px;
+    margin-left: 70px;
 }
 @media (max-width: 1700px){
     html{
