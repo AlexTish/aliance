@@ -427,6 +427,9 @@ a{
     padding: 20px; /* Внутренние отступы вместо margin у лого */
     align-items: center; /* Выравниваем по центру вертикально */
 }
+.brand:hover{
+    border-color: #5c8ee6;
+}
 .brand-title{
     font-size: 30px;
     font-weight: 400;
@@ -447,10 +450,10 @@ a{
     margin-right: 0px;
 }
 .logo-brand{
-    width: auto; /* Автоматическая ширина */
-    max-width: 140px; /* Максимальный размер */
-    height: auto; /* Сохраняем пропорции */
-    margin: 0 30px 0 48px; /* Отступ только справа */
+    width: auto; 
+    max-width: 140px; 
+    height: auto; 
+    margin: 0 30px 0 48px; 
     flex-shrink: 0; /* Запрещаем уменьшение */
 }
 .brand-content{
@@ -463,6 +466,9 @@ a{
     width: 103px; 
     height: 140px;
     margin-left: 70px;
+}
+.brand:hover .logo-brand {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(89%) saturate(378%) hue-rotate(189deg) brightness(93%) contrast(89%);
 }
 @media (max-width: 1700px){
     html{
@@ -674,6 +680,7 @@ a{
     .header-title{
     line-height: 120%;
     }
+    
 }
 
 
