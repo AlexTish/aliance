@@ -60,7 +60,7 @@ body{
 /* Полный сброс стилей ссылок */
 a{
     color: inherit; /* Наследует цвет родителя */
-    text-decoration: none; /* Убирает подчёркивание */
+    text-decoration: none; 
 } 
 .header{
     /* max-height: 60.625rem;   */
@@ -407,8 +407,8 @@ a{
     font-weight: 400;
     line-height: 160%;
     color: rgb(130, 138, 153);
-    margin-top: 13px;
-    margin-bottom: 355px;
+    margin-top: 0.8125rem;
+    margin-bottom: 22.1875rem;
 }
 .section.trademarks{
     padding-top: 1px;
@@ -419,65 +419,71 @@ a{
 
 }
 .brand{
-    display: flex;
+    display: grid;
     text-decoration: none;
     flex-basis: 50%;  
     border: 1px solid #ebebf0;
-    box-sizing: border-box; /* Важно для правильного расчета ширины */
-    padding: 20px; /* Внутренние отступы вместо margin у лого */
-    align-items: center; /* Выравниваем по центру вертикально */
+    transition: border 0.2s;
+    padding: 3.125rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 2fr;
+    grid-column-gap: 3.125rem;
+    grid-template-areas: 
+    "logo title title"
+    "logo text text";
+}
+.logo-brand{
+    fill: #828A99;
+    grid-area: logo;
+}
+.logo-brand.agtech{
+    width: 85%; 
+    margin-left: 0.9375rem;
+}
+.logo-brand.ap {
+    width: 60%;
+    margin-left: 2.1875rem;
+}
+.brand-title{
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: #292D33;
+    margin: 0;
+    margin-left: 0.3125rem;
+    letter-spacing: 1px;
+    grid-area: title;
+}
+.brand-text{
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: #828A99;
+    margin-top: 0.625rem;
+    margin-left: 0.4375rem;
+    margin-right: 0.9375rem;
+    grid-area: text;
 }
 .brand:hover{
     border-color: #5c8ee6;
 }
-.brand-title{
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 160%;
-    margin-top: -43px;
-    margin-left: 43px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    letter-spacing: -1px;
-}
-.brand-text{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
-    margin-top: 12px;
-    margin-left: 43px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-}
-.logo-brand{
-    width: auto; 
-    max-width: 140px; 
-    height: auto; 
-    margin: 0 30px 0 48px; 
-    flex-shrink: 0; /* Запрещаем уменьшение */
-}
-.brand-content{
-    margin: 70px 50px 50px 0px;
-}
-.logo-brand.agtech{
-    width: 140px; 
-}
-.logo-brand.ap {
-    width: 103px; 
-    height: 140px;
-    margin-left: 70px;
-}
 .brand:hover .logo-brand {
-    filter: brightness(0) saturate(100%) invert(45%) sepia(89%) saturate(378%) hue-rotate(189deg) brightness(93%) contrast(89%);
+    /* fill:#5C8EE6;  */
+    filter: brightness(0) saturate(100%) invert(45%) sepia(89%) saturate(378%) hue-rotate(189deg) brightness(93%) contrast(89%);  
+} 
+.brand:hover .brand-title {
+    color: #5c8ee6;
 }
 @media (max-width: 1700px){
     html{
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 } 
 @media (max-width: 1460px){
     html{
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
     .header-logo{
         padding: 2rem;
@@ -522,10 +528,13 @@ a{
     .card{
         flex-basis: 50%;
     }
+    .brand{
+        grid-template-columns: auto auto;
+    }
 }
 @media (max-width: 992px){
     html{
-        font-size: 12px;
+        font-size: .75rem;
     }
     .container{
         max-width: 60rem;
@@ -538,7 +547,7 @@ a{
         justify-content: center;
     }
     .mobile-menu-toggle{
-        width: 80px;
+        width: 5rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -553,7 +562,7 @@ a{
         height: 1px;
         background-color: #fff;
         width: 100%;
-        transition: transform 0.2s;  /*плавность действий 0.2s */
+        transition: transform 0.2s;  
     }
     .mobile-menu-line:nth-child(2){
         width: 80%;
@@ -593,7 +602,7 @@ a{
     .mobile-menu-link{
         text-decoration: none;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 160%;
         color: #292d33;
     }
@@ -605,14 +614,14 @@ a{
     }
     .mobile-submenu-link{
         text-decoration: none;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 160%;
         color: #828A99;
     }
     .mobile-phone{
         display: block;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 160%;
         color: #292D33;
         text-decoration-line: underline;
@@ -629,7 +638,7 @@ a{
     .mobile-info-address, mobile-info-email{
         text-decoration: none;
         font-style: normal;
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 400;
         line-height: 160%;
         color: #292D33;
@@ -645,6 +654,9 @@ a{
     }
     .close-menu .mobile-menu-line:nth-child(3){
         transform: rotate(-45deg) translateY(-9px); /* close-menu */
+    }
+    .brands{
+        flex-direction: column;
     }
 }
 @media(max-width:768px){
@@ -672,10 +684,15 @@ a{
     .header-content{
         padding-top: 2rem;
     }
+    .brand{
+        grid-template-areas: 
+        "logo title"
+        "text text";
+    }
 }
 @media(max-width:375px){
     .header-text{
-        font-size: .875rem;
+        font-size: 0.875rem;
     }
     .header-title{
     line-height: 120%;
