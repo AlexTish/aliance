@@ -556,19 +556,17 @@ a{
     display: flex;
     align-items: center;
     justify-content: center; 
-    padding: 45px 16px 45px 16px ;
+    padding: 45px 16px 45px 16px;
+    filter: grayscale(100%);  /* Черно-белый */
+    transition: filter 0.2s ease; /* Плавный переход */
 }
 .clients-logo{
     /* min-width: 100%;
     width: 70px;
     height: 70px;  */
-    filter: grayscale(100%) brightness(0.8);
-    opacity: 0.8; /* Немного прозрачности */
-    transition: all 0.3s ease; /* Плавный переход */
 }
-.clients-logo-item:hover .clients-logo {
-    filter: none; /* Возвращаем оригинальные цвета */
-    opacity: 1; /* Полная непрозрачность */
+.clients-logo-item:hover{
+    filter: grayscale(0%); /* Возвращаем оригинальные цвета */
 }
 @media (max-width: 1700px){
     html{
