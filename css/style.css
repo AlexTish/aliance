@@ -339,7 +339,7 @@ a{
     letter-spacing: 0.15px;
     word-spacing: 0.5px;
 }
-.steps-link{
+.button-link{
     display: flex;
     align-items:center;
     text-decoration: none;
@@ -350,7 +350,7 @@ a{
     letter-spacing: 0.3px;
     padding-top: .125rem;
 }
-.steps-link::before{
+.button-link::before{
     content:"";
     height: 1px;
     background: #5C8EE6;
@@ -358,7 +358,7 @@ a{
     margin-right: 1.25rem;
     transition: width 0.2s;
 }
-.steps-link:hover::before{
+.button-link:hover::before{
     width: 3.75rem;
 }
 .section.production {
@@ -476,6 +476,100 @@ a{
 .brand:hover .brand-title {
     color: #5c8ee6;
 }
+.founder{
+    min-height: 41.25rem;  /* Минимальная высота блока */
+    position: relative;  /* Позиционирование относительно, чтобы дочерние absolute элементы позиционировались внутри него */
+    /* background-image: url(../img/founder.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 40%; */
+}
+.founder-photo{
+    position: absolute; /* Вырывает элемент из обычного потока документа и позиционирует его относительно ближайшего родителя с position: .founder */
+    left: 0;
+    width: 44%;
+    top: 0;
+    height: 100%;    
+    object-fit: cover; /* Заполняет весь контейнер, обрезая края изображения */
+}
+.founder-content{
+    max-width: 45rem;
+    margin-top: 45px;
+}
+.founder-content-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+.founder .section-title{
+    margin-bottom: 25px;
+}
+.founder .title-line{
+    display: block;
+}
+.founder-text{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: #828A99;
+    letter-spacing: 0px;
+}
+.founder-text p:not(:last-child){
+    margin-bottom: 1.5625rem;
+}
+.founder .button-link{
+    margin-top: 1.6875rem;
+}
+.clients-wrapper{
+    display: flex;
+    gap: 1.125rem;
+}
+.clients-content{
+    flex-basis: 50%;
+}
+.clients .section-title{
+    margin-bottom: 32px;
+}
+.clients-list{
+    margin-top: 0;
+    list-style-type: none;
+    padding: 0;
+    columns: 2 auto;
+}
+.clients-list-item{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 300%;
+    color: #292D33;
+}
+.clients-logo-list{
+    margin-top: 30px;
+    flex-shrink: 10;
+    display: flex; 
+    flex-wrap: wrap;
+}
+.clients-logo-item{
+    flex-basis: 33%;
+    border: 1px solid #ebebf0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 45px 16px 45px 16px ;
+}
+.clients-logo{
+    /* min-width: 100%;
+    width: 70px;
+    height: 70px;  */
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.8; /* Немного прозрачности */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+.clients-logo-item:hover .clients-logo {
+    filter: none; /* Возвращаем оригинальные цвета */
+    opacity: 1; /* Полная непрозрачность */
+}
 @media (max-width: 1700px){
     html{
         font-size: 0.875rem;
@@ -530,6 +624,12 @@ a{
     }
     .brand{
         grid-template-columns: auto auto;
+    }
+    .founder-content{
+        max-width: 35rem;
+    }
+    .clients-content{
+        flex-basis: 60%;
     }
 }
 @media (max-width: 992px){
@@ -658,6 +758,12 @@ a{
     .brands{
         flex-direction: column;
     }
+    .founder-content{
+        max-width: 32rem;
+    }
+    .clients-wrapper{
+        flex-direction: column;
+    }
 }
 @media(max-width:768px){
     .container {
@@ -672,6 +778,11 @@ a{
     }
     .card{
         flex-basis: 100%;
+    }
+    .founder-photo{
+        position: relative;
+        width: 100%;
+        margin-bottom: 3.125rem;
     }
 }
 @media(max-width:576px){
@@ -688,6 +799,13 @@ a{
         grid-template-areas: 
         "logo title"
         "text text";
+    }
+    .clients-list{
+        
+        columns: 1;
+    }
+    .clients-logo-item{
+        flex-basis: 50%;
     }
 }
 @media(max-width:375px){
