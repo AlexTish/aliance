@@ -92,7 +92,7 @@
             </svg>
             <a href="tel:+74996861014" class="header-phone-link">+7 (499) 686-10-14</a>
         </div><!-- /.header-phone -->
-        <button class="navbar-button button">
+        <button class="navbar-button button" data-toggle="modal">
             <svg class="button-icon" width="16" height="17">
                 <use href="img/sprite.svg#phone"></use>
             </svg>
@@ -107,7 +107,7 @@
                 <p class="header-text">
                         Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от анализа существующих паттернов поведения.
                 </p>
-                <div class="button">Подробнее о компании</div>
+                <div class="button" data-toggle="modal">Подробнее о компании</div>
             </div><!-- /.header-content -->
 
             <!-- Основной блок слайдера -->
@@ -587,13 +587,59 @@
                 <!-- /.footer-legal -->
                 <div class="footer-author">
                     <span class="made-in">Сделано в</span>
-                    <svg class="notify-icon" width="52" height="11">
+                    <svg class="ruso-icon" width="52" height="11">
                         <use href="img/sprite.svg#ruso"></use>
                     </svg>
                 </div>
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal-dialog">
+            <h2 class="modal-title">Есть вопросы?</h2>
+            <a href="#" class="modal-close">
+                <svg class="close-icon" width="24" height="24">
+                    <use href="img/sprite.svg#close"></use>
+                </svg>
+            </a>
+            <p class="modal-text">Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!</p>
+            <form action="#" class="modal-form">
+                <div class="input-group-wrapper input-group-vertical">
+                    <div class="input-group">
+                        <input 
+                            id="modal-user-name" 
+                            type="text" 
+                            class="input modal-input" 
+                            placeholder=" ">
+                        <label class="input-group-label modal-input-label" for="modal-user-name">Имя</label>
+                    </div>
+                    <div class="input-group">
+                        <input 
+                            id="modal-user-phone" 
+                            type="tel" 
+                            class="input modal-input"
+                            placeholder=" ">
+                        <label class="input-group-label modal-input-label" for="modal-user-phone">Номер телефона</label>
+                    </div>
+                </div>
+                <div class="modal-form-footer">
+                    <button type="submit" class="button modal-form-button">
+                        Отправить заявку
+                    </button>
+                    <div class="notify modal-notify">
+                        <svg class="notify-icon" width="14" height="14">
+                            <use href="img/sprite.svg#shield"></use>
+                        </svg>
+                        <p class="notify-text modal-notify-text">
+                            Обращаясь к нам вы получаете не только профессиональную работу, но и абсолютную конфиденциальность информации!
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>

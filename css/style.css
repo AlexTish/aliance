@@ -125,11 +125,6 @@ a{
     right: 0;
     left: auto;
 }
-.header-nav-link:hover::after{
-    width: 100%;
-    right: auto;
-    left: 0;
-}
 .header-nav-item {
     margin-right: 3.3125rem;
     height: 100%;
@@ -162,9 +157,6 @@ a{
     display: inline-block;
     cursor: pointer;
     transition: background-color 0.2s;
-}
-.button:hover{
-    background-color: #3A71D1;
 }
 .navbar-button{
     flex-shrink: 0;
@@ -362,9 +354,6 @@ a{
     margin-right: 1.25rem;
     transition: width 0.2s;
 }
-.button-link:hover::before{
-    width: 3.75rem;
-}
 .section.production {
     margin-top: -1.5625rem; 
     position: relative; /* Чтобы контент не перекрывался */
@@ -380,12 +369,6 @@ a{
     border: 1px solid #ebebf0;
     position: relative;
     transition: border 0.2s;
-}
-.card:hover .card-title{
-    color: #5c8ee6;
-}
-.card:hover{
-    border-color: #5c8ee6;
 }
 .card-image{
     position: absolute;
@@ -470,18 +453,8 @@ a{
     margin-right: .9375rem;
     grid-area: text;
 }
-.brand:hover{
-    border-color: #5c8ee6;
-}
-.brand:hover .logo-brand {
-    /* fill:#5C8EE6;  */
-    filter: brightness(0) saturate(100%) invert(45%) sepia(89%) saturate(378%) hue-rotate(189deg) brightness(93%) contrast(89%);  
-} 
-.brand:hover .brand-title {
-    color: #5c8ee6;
-}
 .founder{
-    min-height: 41.25rem;  /* Минимальная высота блока */
+    min-height: 41.25rem;  
     position: relative;  /* Позиционирование относительно, чтобы дочерние absolute элементы позиционировались внутри него */
     /* background-image: url(../img/founder.jpg);
     background-repeat: no-repeat;
@@ -568,9 +541,6 @@ a{
     /* min-width: 100%;
     width: 70px;
     height: 70px;  */
-}
-.clients-logo-item:hover{
-    filter: grayscale(0%); /* Возвращаем оригинальные цвета */
 }
 .section.blog{
     margin-top: -7px;
@@ -675,6 +645,10 @@ a{
 .input-group-wrapper{
     display: flex;
     gap: 1.875rem;
+}
+.input-group-vertical{
+    display: flex;
+    flex-direction: column;
 }
 .input-group{
     position: relative;
@@ -883,6 +857,145 @@ a{
 }
 .made-in{
     font-size: 12px;
+}
+.modal{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 45, 51, 0.5);
+    z-index: 10;
+    display: flex;
+    transition: opacity 0.2s;
+}
+.modal.is-open{
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+.modal.is-open .modal-dialog{
+    transform: translateY(0);
+    opacity: 1;
+}
+.modal-dialog{
+    background-color: #fff;
+    margin: auto;
+    max-width: 28.75rem;
+    padding: 2.5rem 3.125rem;
+    position: relative;
+    transform: translateY(-10%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.modal-close{
+    display: block;
+    position: absolute;
+    top: 2.5rem; 
+    right: 3.125rem; 
+    z-index: 11; 
+    width: 50px;
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ebebf0;
+}
+.modal-title{
+    font-family: "Bebas Neue Book";
+    font-style: normal;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 120%;
+    color: rgba(41, 45, 51, 1);
+    margin-top: 0; 
+    margin-top: 3px; 
+    margin-bottom: 1.25rem; 
+}
+.modal-text{
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: rgba(130, 138, 153, 1);
+    margin-bottom: 30px;
+}
+.modal-input{
+    background-color: #fff;
+}
+.modal-input-label{
+    background-color: #fff;
+    color: #828A99;
+    z-index: 2;
+}
+.modal-dialog .input:focus ~ .input-group-label,
+.modal-dialog .input:not(:placeholder-shown).input:not(:focus) ~ .input-group-label {
+    background-color: #fff !important;
+    color: #828A99;
+    font-size: 10px;
+    top: -0.5rem;
+    left: 20px;
+    padding: 0 10px;
+}
+.modal-form-footer{
+    margin-top: 30px;
+}
+.modal-form-button{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 24px;
+    height: 62px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 160%;
+    padding: 0 20px;
+}
+.modal-notify-text{
+    min-width: auto;   
+    max-width: 20rem;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 160%;
+}
+/*hover effects*/
+@media(hover: hover){
+    .header-nav-link:hover::after{
+        width: 100%;
+        right: auto;
+        left: 0;
+    }
+    .button:hover{
+        background-color: #3A71D1;
+    }
+    .button-link:hover::before{
+        width: 3.75rem;
+    }
+    .card:hover .card-title{
+        color: #5c8ee6;
+    }
+    .card:hover{
+        border-color: #5c8ee6;
+    }
+    .brand:hover{
+        border-color: #5c8ee6;
+    }
+    .brand:hover .logo-brand {
+        /* fill:#5C8EE6;  */
+        filter: brightness(0) saturate(100%) invert(45%) sepia(89%) saturate(378%) hue-rotate(189deg) brightness(93%) contrast(89%);  
+    } 
+    .brand:hover .brand-title {
+        color: #5c8ee6;
+    }
+    .clients-logo-item:hover{
+        filter: grayscale(0%); /* Возвращаем оригинальные цвета */
+    }
 }
 @media (max-width: 1700px){
     html{
