@@ -6,8 +6,8 @@ html{
 }
 @font-face {
     font-family: "Bebas Neue Book";
-    src: url('/fonts/BebasNeueBook.woff2') format('woff2'),
-        url('/fonts/BebasNeueBook.woff') format('woff');
+    src: url('../fonts/BebasNeueBook.woff2') format('woff2'),
+        url('../fonts/BebasNeueBook.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
