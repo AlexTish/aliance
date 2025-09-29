@@ -23,7 +23,7 @@
                                 id="user-phone" 
                                 type="tel" 
                                 name="userphone"
-                                class="input"
+                                class="input phone-mask"
                                 placeholder=" "
                                 maxlength ="30"
                                 required>
