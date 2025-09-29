@@ -1,7 +1,7 @@
 <section class="calltoaction">
         <div class="bg-grey section-cta">
             <img src="img/cta.png" alt="call to action" class="cta-image">
-            <div class="cta-from-wrapper container">
+            <div class="cta-form-wrapper container">
                 <form action="handler.php" method="POST" class="cta-form">
                     <h2 class="section-title cta-form-title">Хотите сотрудничать?</h2>
                     <p class="cta-form-text">Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!</p>
@@ -160,13 +160,14 @@
                 </svg>
             </a>
             <p class="modal-text">Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!</p>
-            <form action="#" class="modal-form">
+            <form action="handler.php" method="POST" class="modal-form">
                 <div class="input-group-wrapper input-group-vertical">
                     <div class="input-group">
                         <input 
                             id="modal-user-name" 
                             type="text" 
                             class="input modal-input" 
+                            name="username"
                             placeholder=" ">
                         <label class="input-group-label modal-input-label" for="modal-user-name">Имя</label>
                     </div>
@@ -175,6 +176,7 @@
                             id="modal-user-phone" 
                             type="tel" 
                             class="input modal-input"
+                            name="userphone"
                             placeholder=" ">
                         <label class="input-group-label modal-input-label" for="modal-user-phone">Номер телефона</label>
                     </div>
@@ -198,6 +200,6 @@
     </div>
     <!-- /.modal -->
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/just-validate.production.min.js"></script>
     <script src="js/main.js"></script>
-</body>
-</html>
+

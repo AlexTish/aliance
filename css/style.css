@@ -717,7 +717,7 @@ a{
     max-width: 45rem;
     width: 50%;
 }
-.cta-from-wrapper{
+.cta-form-wrapper{
     display: flex;
     justify-content: flex-end;
 }
@@ -782,6 +782,20 @@ a{
     font-size: 10px;
     background-color: #F0F2F5;
     padding: 10px;
+}
+.input.is-invalid{
+    border: 1px solid red;
+}
+.just-validate-error-label{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: #F0F2F5;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    display: inline-block;
 }
 .cta-form-footer{
     display: flex;
@@ -1338,7 +1352,7 @@ a{
     .cta-image{
         display: none;
     }
-    .cta-from-wrapper {
+    .cta-form-wrapper {
         width: 100%; 
         justify-content: center; 
     }
