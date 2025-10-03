@@ -154,7 +154,7 @@
     <div class="modal">
         <div class="modal-dialog">
             <h2 class="modal-title">Есть вопросы?</h2>
-            <a href="#" class="modal-close" data-toggle="modal">
+            <a href="#" class="modal-close">
                 <svg class="close-icon" width="24" height="24">
                     <use href="img/sprite.svg#close"></use>
                 </svg>
@@ -175,7 +175,7 @@
                         <input 
                             id="modal-user-phone" 
                             type="tel" 
-                            class="input modal-input"
+                            class="input modal-input phone-mask"
                             name="userphone"
                             placeholder=" ">
                         <label class="input-group-label modal-input-label" for="modal-user-phone">Номер телефона</label>
@@ -199,6 +199,21 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div class="modal success">
+        <div class="modal-dialog modal-success">
+            <img src="img/thanks.png" alt="Спасибо за заявку!">
+            <h2 class="modal-title modal-thanks">Спасибо за заявку!</h2>
+            <a href="#" class="modal-close">
+                <svg class="close-icon" width="24" height="24">
+                    <use href="img/sprite.svg#close"></use>
+                </svg>
+            </a>
+            <p class="modal-text">Наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!</p>
+            <div class="modal-form-footer">
+                <a href="./" class="button modal-form-button">Вернуться на главную</a>
+            </div>
+        </div>
+    </div>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/just-validate.production.min.js"></script>
     <script src="js/main.js"></script>

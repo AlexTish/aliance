@@ -127,27 +127,61 @@ const swiperBlog = new Swiper('.blog-slider', {
     },
 });
 
-const modal = document.querySelector('.modal');
-const modalDialog = document.querySelector('.modal-dialog');
+const mainModal = document.querySelector('.modal'); // Первое модальное окно
+const successModal = document.querySelector('.modal.success'); // Второе модальное окно "Спасибо"
 
+// Функция для открытия основного модального окна
+function openMainModal() {
+    if (mainModal) {
+        mainModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Функция для закрытия всех модальных окон
+function closeAllModals() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('is-open');
+    });
+    document.body.style.overflow = '';
+}
+
+// Обработчик кликов для открытия/закрытия модальных окон
 document.addEventListener('click', (event) => {
-    if (
-        event.target.dataset.toggle === 'modal' || 
-        event.target.parentNode.dataset.toggle === 'modal' ||
-        (!event.composedPath().includes(modalDialog) && 
-        modal.classList.contains('is-open'))
-    ) {
+    // Открытие модального окна при клике на кнопки с data-toggle="modal"
+    if (event.target.dataset.toggle === 'modal' || 
+        (event.target.parentNode && event.target.parentNode.dataset.toggle === 'modal')) {
         event.preventDefault();
-        modal.classList.toggle('is-open');
+        // Проверяем, не находимся ли мы уже в модальном окне "Спасибо"
+        if (!successModal.classList.contains('is-open')) {
+            openMainModal();
+        }
+        return;
     }
-});
-document.addEventListener('keyup', (event) => {
-    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
-        modal.classList.toggle('is-open');
+    
+    // Закрытие при клике на кнопку закрытия
+    if (event.target.closest('.modal-close')) {
+        event.preventDefault();
+        closeAllModals();
+        return;
+    }
+    
+    // Закрытие при клике вне модального окна
+    const clickedInsideModal = event.target.closest('.modal-dialog');
+    if (!clickedInsideModal) {
+        closeAllModals();
     }
 });
 
-const forms = document.querySelectorAll('form'); // Собираем формы
+// Закрытие по ESC
+document.addEventListener('keyup', (event) => {
+    if (event.key === 'Escape') {
+        closeAllModals();
+    }
+});
+
+// Обработка успешной отправки формы
+const forms = document.querySelectorAll('form');
 forms.forEach((form) => {
     const validation = new JustValidate(form, {
         errorFieldCssClass: 'is-invalid',
@@ -155,35 +189,49 @@ forms.forEach((form) => {
     validation
         .addField('[name=username]', [
             {
-            rule: 'required',
-            errorMessage: 'Укажите имя',
+                rule: 'required',
+                errorMessage: 'Укажите имя',
             },
             {
-            rule: 'maxLength',
-            value: 50,
-            errorMessage: 'Максимально 50 символов',
+                rule: 'maxLength',
+                value: 50,
+                errorMessage: 'Максимально 50 символов',
             },
         ])
         .addField('[name=userphone]', [
             {
-            rule: 'required',
-            errorMessage: 'Укажите телефон',
+                rule: 'required',
+                errorMessage: 'Укажите телефон',
             },
         ])
         .onSuccess((event) => {
             const thisForm = event.target;
             const formData = new FormData(thisForm);
+            
             const ajaxSend = (formData) => {
-                fetch(thisForm.getAttribute('action'), {   //fetch(url, {options})
+                fetch(thisForm.getAttribute('action'), {
                     method: thisForm.getAttribute('method'),
                     body: formData,
-                }).then  (response => {
+                }).then(response => {
                     if(response.ok){
                         thisForm.reset();
-                        alert('Форма отправлена!')
-                    } else{
-                        alert('Ошибка. Текст ошибки'.response.statusText);
+                        
+                        // Закрыть все модальные окна
+                        closeAllModals();
+                        
+                        // Открыть окно "Спасибо"
+                        if (successModal) {
+                            setTimeout(() => {
+                                successModal.classList.add('is-open');
+                                document.body.style.overflow = 'hidden';
+                            }, 300);
+                        }
+                        
+                    } else {
+                        alert('Ошибка: ' + response.statusText);
                     }
+                }).catch(error => {
+                    alert('Ошибка сети: ' + error.message);
                 });
             };
             ajaxSend(formData);
