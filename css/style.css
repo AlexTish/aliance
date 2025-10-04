@@ -1023,8 +1023,8 @@ a{
     margin-top: 3px; 
     margin-bottom: 1.25rem; 
 }
-.modal-thanks{
-    margin-top: 30px; 
+.modal-thank{
+    padding-top: 28px; 
 }
 .modal-text{
     font-style: normal;

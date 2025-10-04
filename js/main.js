@@ -127,61 +127,31 @@ const swiperBlog = new Swiper('.blog-slider', {
     },
 });
 
-const mainModal = document.querySelector('.modal'); // Первое модальное окно
-const successModal = document.querySelector('.modal.success'); // Второе модальное окно "Спасибо"
+let currentModal;  // текущее модальное окно
+let modalDialog;  //  белое диалоговое окно
+let alertModal = document.querySelector('#alert-modal');  // окно с предупреждением
 
-// Функция для открытия основного модального окна
-function openMainModal() {
-    if (mainModal) {
-        mainModal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-// Функция для закрытия всех модальных окон
-function closeAllModals() {
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.classList.remove('is-open');
+const modalButtons = document.querySelectorAll('[data-toggle=modal]');  // переключатели модальных окон
+modalButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {  // клик по переключателю
+        event.preventDefault();
+        currentModal = document.querySelector(button.dataset.target);  // определяем текущее открытое окно
+        currentModal.classList.toggle("is-open");  // открываем текущее окно
+        modalDialog = currentModal.querySelector('.modal-dialog')  // назначаем диалоговое окно
+        currentModal.addEventListener('click', event => {   // отслеживаем клик по окну и пустым областям
+            if (!event.composedPath().includes(modalDialog)){  // если клик в пустую область (не диалог)
+                currentModal.classList.remove("is-open");     // закываем окно
+            }
+        });
     });
-    document.body.style.overflow = '';
-}
-
-// Обработчик кликов для открытия/закрытия модальных окон
-document.addEventListener('click', (event) => {
-    // Открытие модального окна при клике на кнопки с data-toggle="modal"
-    if (event.target.dataset.toggle === 'modal' || 
-        (event.target.parentNode && event.target.parentNode.dataset.toggle === 'modal')) {
-        event.preventDefault();
-        // Проверяем, не находимся ли мы уже в модальном окне "Спасибо"
-        if (!successModal.classList.contains('is-open')) {
-            openMainModal();
-        }
-        return;
-    }
-    
-    // Закрытие при клике на кнопку закрытия
-    if (event.target.closest('.modal-close')) {
-        event.preventDefault();
-        closeAllModals();
-        return;
-    }
-    
-    // Закрытие при клике вне модального окна
-    const clickedInsideModal = event.target.closest('.modal-dialog');
-    if (!clickedInsideModal) {
-        closeAllModals();
-    }
+});
+document.addEventListener('keyup', (event) => {  // ловим событие нажатия на кнопки
+    if (event.key === 'Escape' && currentModal.classList.contains("is-open")) {  // проверяем Escape и текущее окно открыто
+        currentModal.classList.toggle("is-open");  // закрываем текущее окно
+    }        
 });
 
-// Закрытие по ESC
-document.addEventListener('keyup', (event) => {
-    if (event.key === 'Escape') {
-        closeAllModals();
-    }
-});
-
-// Обработка успешной отправки формы
-const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('form'); // Собираем формы
 forms.forEach((form) => {
     const validation = new JustValidate(form, {
         errorFieldCssClass: 'is-invalid',
@@ -189,49 +159,43 @@ forms.forEach((form) => {
     validation
         .addField('[name=username]', [
             {
-                rule: 'required',
-                errorMessage: 'Укажите имя',
+            rule: 'required',
+            errorMessage: 'Укажите имя',
             },
             {
-                rule: 'maxLength',
-                value: 50,
-                errorMessage: 'Максимально 50 символов',
+            rule: 'maxLength',
+            value: 50,
+            errorMessage: 'Максимально 50 символов',
             },
         ])
         .addField('[name=userphone]', [
             {
-                rule: 'required',
-                errorMessage: 'Укажите телефон',
+            rule: 'required',
+            errorMessage: 'Укажите телефон',
             },
         ])
         .onSuccess((event) => {
-            const thisForm = event.target;
-            const formData = new FormData(thisForm);
-            
+            const thisForm = event.target;  // наша форма
+            const formData = new FormData(thisForm);  // данные из нашей формы
             const ajaxSend = (formData) => {
-                fetch(thisForm.getAttribute('action'), {
+                fetch(thisForm.getAttribute('action'), {   //fetch(url, {options})
                     method: thisForm.getAttribute('method'),
                     body: formData,
-                }).then(response => {
+                }).then  (response => {
                     if(response.ok){
                         thisForm.reset();
-                        
-                        // Закрыть все модальные окна
-                        closeAllModals();
-                        
-                        // Открыть окно "Спасибо"
-                        if (successModal) {
-                            setTimeout(() => {
-                                successModal.classList.add('is-open');
-                                document.body.style.overflow = 'hidden';
-                            }, 300);
-                        }
-                        
-                    } else {
-                        alert('Ошибка: ' + response.statusText);
+                        currentModal.classList.remove("is-open");
+                        alertModal.classList.add("is-open");
+                        currentModal = alertModal;
+                        modalDialog = currentModal.querySelector('.modal-dialog')  // назначаем диалоговое окно
+                        currentModal.addEventListener('click', event => {   // отслеживаем клик по окну и пустым областям
+                            if (!event.composedPath().includes(modalDialog)){  // если клик в пустую область (не диалог)
+                                currentModal.classList.remove("is-open");     // закываем окно
+                            }
+                        });
+                    } else{
+                        alert('Ошибка. Текст ошибки'.response.statusText);
                     }
-                }).catch(error => {
-                    alert('Ошибка сети: ' + error.message);
                 });
             };
             ajaxSend(formData);
