@@ -1,9 +1,9 @@
 <section class="section section-light">
     <div class="container">
         <?php
-            if (!empty($block_title)) {
+            if (!empty($workflow_block_title)) {
                 echo '<div class="separator"></div>';
-                echo '<h2 class="section-title">'. $block_title .'</h2>';
+                echo '<h2 class="section-title">'. $workflow_block_title .'</h2>';
             }
             ?>
         <div class="swiper swiper-steps">

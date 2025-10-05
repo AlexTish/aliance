@@ -1,9 +1,9 @@
 <section class="section blog">
     <div class="container">
         <?php
-            if (!empty($block_title)) {
+            if (!empty($blog_block_title)) {
                 echo '<div class="separator"></div>';
-                echo '<h2 class="section-title">'. $block_title .'</h2>';
+                echo '<h2 class="section-title">'. $blog_block_title .'</h2>';
             }
             ?>
         <div class="swiper blog-slider">
