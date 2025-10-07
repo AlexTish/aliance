@@ -60,33 +60,51 @@
                 </ul>
             </div> 
             <div class="clients-logo-list">
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
-                <a href="#" class="clients-logo-item">
-                    <img src="img/client.png" alt="client-logo" class="clients-logo">
-                </a>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
+                <picture class="clients-logo-item">
+                    <source type="image/webp" srcset="img/client.webp">
+                    <source type="image/jpeg" srcset="img/client.png">
+                    <img src="img/client.png" alt="client-logo">
+                </picture>
             </div>  
         </div>  
     </div>

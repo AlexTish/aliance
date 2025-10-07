@@ -111,4 +111,34 @@
             </div>
         </div>
     </section>
-    
+    <!-- <section class="section page-header-image bg-grey">
+        <div class="container page-header-inner">
+            <div class="page-header-text">
+                <div class="separator"></div>
+                <h1 class="header-title page-title">Автохимия AG-Tech</h1>
+                <ul class="breadcrumb">
+                    <li><a class="breadcrumb-item" href="#">Главная</a></li>
+                    <li><a class="breadcrumb-item" href="#">Собственные торговые марки</a></li>
+                    <li><a class="breadcrumb-item current" href="#">Автохимия AG-Tech</a></li>
+                </ul>
+            </div>
+            <div class="bottles-container">
+                <img src="/img/bottle.png" alt="bottle" class="bottle-image">
+                <img src="/img/bottle.png" alt="bottle" class="bottle-image">
+                <img src="/img/bottle.png" alt="bottle" class="bottle-image">
+            </div>
+        </div>
+    </section>
+    <section class="section page-header-blog bg-grey">
+        <div class="container page-header-inner">
+            <div class="page-header-text">
+                <div class="separator"></div>
+                <h1 class="header-title page-title">Современная методология разработки<br>одухотворила всех причастных</h1>
+                <ul class="breadcrumb">
+                    <li><a class="breadcrumb-item" href="#">Главная</a></li>
+                    <li><a class="breadcrumb-item" href="#">Блог</a></li>
+                    <li><a class="breadcrumb-item" href="#">Современная методология разработки одухотворила всех причастных</a></li>
+                </ul>
+            </div>
+        </div>
+    </section> -->

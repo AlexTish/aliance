@@ -12,7 +12,11 @@
                     <h3 class="card-title">Автомобильная химия</h3>
                     <div class="card-text">Безусловно, сплочённость команды профессионалов позволяет оценить<br>значение форм воздействия.</div>
                 </div>
-                <img src="img/avto-him.png" alt="Автомобильная химия" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/avto-him.webp">
+                    <source type="image/jpeg" srcset="img/avto-him.png">
+                    <img src="img/avto-him.png" alt="Автомобильная химия">
+                </picture>
             </a>
             <a href="#" class="card">
                 <div class="card-content">
@@ -20,7 +24,11 @@
                     <div class="card-text">А также стремящиеся вытеснить<br>традиционное производство,<br>нанотехнологии функционально<br>разнесены на независимые элементы.</div>
                 </div>
                 <!-- /.card-content -->
-                <img src="img/bit-him.png" alt="Бытовая химия" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/bit-him.webp">
+                    <source type="image/jpeg" srcset="img/bit-him.png">
+                    <img src="img/bit-him.png" alt="Бытовая химия">
+                </picture>
             </a>
             <a href="#" class="card">
                 <div class="card-content">
@@ -28,7 +36,11 @@
                     <div class="card-text">Лишь интерактивные прототипы<br>призваны к ответу.</div>
                 </div>
                 <!-- /.card-content -->
-                <img src="img/dezinfect.png" alt="Дезинфицирующие средства" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/dezinfect.webp">
+                    <source type="image/jpeg" srcset="img/dezinfect.png">
+                    <img src="img/dezinfect.png" alt="Дезинфицирующие средства">
+                </picture>
             </a>
             <a href="#" class="card"> 
                 <div class="card-content">
@@ -36,7 +48,11 @@
                     <div class="card-text">Безусловно, сплочённость команды профессионалов позволяет оценить<br>значение форм воздействия.</div>
                 </div>
                 <!-- /.card-content -->
-                <img src="img/dezinfect.png" alt="Пищевые аэрозоли" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/dezinfect.webp">
+                    <source type="image/jpeg" srcset="img/dezinfect.png">
+                    <img src="img/dezinfect.png" alt="Пищевые аэрозоли">
+                </picture>
             </a>
             <a href="#" class="card">
                 <div class="card-content">
@@ -44,7 +60,11 @@
                     <div class="card-text">Лишь интерактивные прототипы<br>призваны к ответу.</div>
                 </div>
                 <!-- /.card-content -->
-                <img src="img/avto-him.png" alt="Косметическая продукция" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/avto-him.webp">
+                    <source type="image/jpeg" srcset="img/avto-him.png">
+                    <img src="img/avto-him.png" alt="Косметическая продукция">
+                </picture>
             </a>
             <a href="#" class="card">
                 <div class="card-content">
@@ -52,7 +72,11 @@
                     <div class="card-text">А также стремящиеся вытеснить<br>традиционное производство,<br>нанотехнологии функционально<br>разнесены на независимые элементы.</div>
                 </div>
                 <!-- /.card-content -->
-                <img src="img/bit-him.png" alt="Краски аэрозольные" class="card-image">
+                <picture class="card-image">
+                    <source type="image/webp" srcset="img/bit-him.webp">
+                    <source type="image/jpeg" srcset="img/bit-him.png">
+                    <img src="img/bit-him.png" alt="Краски аэрозольные">
+                </picture>
             </a>
         </div>
     </div>
