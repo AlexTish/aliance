@@ -108,7 +108,8 @@
                 <h1 class="header-title page-title"><?php echo $page_title ?></h1>
                 <ul class="breadcrumb">
                     <li><a class="breadcrumb-item" href="#">Главная</a></li>
-                    <li><a class="breadcrumb-item current" href="#"><?php echo $page_title ?></a></li>
+                    <li><a class="breadcrumb-item" href="#">Блог</a></li>
+                    <li><a class="breadcrumb-item" href="#">Современная методология разработки одухотворила всех причастных</a></li>
                 </ul>
             </div>
         </div>

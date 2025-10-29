@@ -92,7 +92,7 @@
                     <h2 class="footer-menu-title">Контрактное производство</h2>
                     <ul class="footer-menu-list footer-menu-column-2">
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-link">Автомобильная химия</a>
+                            <a href="./auto-chemistry.php" class="footer-menu-link">Автомобильная химия</a>
                         </li>
                         <li class="footer-menu-item">
                             <a href="#" class="footer-menu-link">Бытовая химия</a>
@@ -128,7 +128,7 @@
                             <a href="./about.php" class="footer-menu-link footer-menu-link-bold">О компании</a>
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-link footer-menu-link-bold">Новости</a>
+                            <a href="./blog.php" class="footer-menu-link footer-menu-link-bold">Новости</a>
                         </li>
                         <li class="footer-menu-item">
                             <a href="./contacts.php" class="footer-menu-link footer-menu-link-bold">Контакты</a>
@@ -143,7 +143,7 @@
             <div class="footer-wrapper">
                 <div class="footer-legal">
                     <p class="footer-copyright">&copy; <?php echo date('Y')?> «Aliance Production». Все права защищены.</p>
-                    <a href="#" class="footer-policy">Политики конфиденциальности</a>
+                    <a href="./privacy-policy.php" class="footer-policy">Политики конфиденциальности</a>
                 </div>
                 <!-- /.footer-legal -->
                 <div class="footer-author">
@@ -224,5 +224,12 @@
     </div>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/just-validate.production.min.js"></script>
-    <script src="js/main.js"></script>
+    
+    <script src="js/main.js"></script> <!-- Общий JavaScript для всех страниц -->
+    <?php if (basename($_SERVER['PHP_SELF']) === 'index.php'): ?>
+        <script src="js/sliders.js"></script> <!-- JavaScript для index.php -->
+    <?php elseif (basename($_SERVER['PHP_SELF']) === 'about.php'): ?>
+        <script src="js/about.js"></script> <!-- JavaScript для about.php -->
+    <?php endif; ?>
+
 

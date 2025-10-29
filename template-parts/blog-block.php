@@ -28,7 +28,6 @@
                 <h3 class="blog-card-title">Сложно сказать, почему жизнь прекрасна</h3>
                 <p class="blog-card-text">Сложно сказать, почему элементы политического процесса функционально разнесены на независимые элементы. Безусловно, высокотехнологичная...</p>
             </a>
-            </a>
             <a href="#" class="swiper-slide blog-card">
                 <picture class="blog-card-image">
                     <source type="image/webp" srcset="img/blog-photo-methodology.webp">

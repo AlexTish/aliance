@@ -108,8 +108,29 @@
                 <h1 class="header-title page-title"><?php echo $page_title ?></h1>
                 <ul class="breadcrumb">
                     <li><a class="breadcrumb-item" href="#">Главная</a></li>
+                    <li><a class="breadcrumb-item" href="#">Контрактное производство</a></li>
                     <li><a class="breadcrumb-item current" href="#"><?php echo $page_title ?></a></li>
                 </ul>
+            </div>
+            <div class="bottles-container">
+                <picture class="bottle-image">
+                    <source type="image/webp" srcset="img/bottle.webp">
+                    <source type="image/jpeg" srcset="img/bottle.png">
+                    <img src="img/bottle.png" alt="bottle">
+                </picture>
+                <picture class="bottle-image">
+                    <source type="image/webp" srcset="img/bottle.webp">
+                    <source type="image/jpeg" srcset="img/bottle.png">
+                    <img src="img/bottle.png" alt="bottle">
+                </picture>
+                <picture class="bottle-image">
+                    <source type="image/webp" srcset="img/bottle.webp">
+                    <source type="image/jpeg" srcset="img/bottle.png">
+                    <img src="img/bottle.png" alt="bottle">
+                </picture>
+                <!-- <img src="/img/bottle.png" alt="bottle" class="bottle-image">
+                <img src="/img/bottle.png" alt="bottle" class="bottle-image">
+                <img src="/img/bottle.png" alt="bottle" class="bottle-image"> -->
             </div>
         </div>
     </section>
