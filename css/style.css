@@ -330,18 +330,20 @@ a{
     max-height: 13.125rem;
     height: auto;
     margin: 0;
-    transform: scaleX(0.9) scaleY(2.15); /* отдельно по осям */
+    transform: none; 
 }
 .bottle-image:nth-child(1) {
     margin-right: -3.125rem; 
+    transform: scale(0.9); 
 }
 .bottle-image:nth-child(2) {
-    transform: scale(1.3);   
+    transform: scale(1.1);   
     z-index: 2;              
     margin: 0; 
 } 
 .bottle-image:nth-child(3) {
     margin-left: -3.125rem; 
+    transform: scale(0.9); 
 }
 .page-header.bg-grey{
     padding: 3.125rem 0 2.1875rem 0;
@@ -559,27 +561,15 @@ a{
     margin-right: 15px;
     grid-area: text;
 }
+.no-webp .founder{
+    background-image: url(../img/founder.jpg);
+}
 .founder{
-    min-height: 660px;  
-    position: relative;  /* Позиционирование относительно, чтобы дочерние absolute элементы позиционировались внутри него */
-    /* background-image: url(../img/founder.jpg);
+    background-image: url(../img/founder.webp);
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 40%; */
-}
-.founder-photo{
-    position: absolute; /* Вырывает элемент из обычного потока документа и позиционирует его относительно ближайшего родителя с position: .founder */
-    left: 0;
-    width: 44%;
-    top: 0;
-    height: 100%;    
-    object-fit: cover; /* Заполняет весь контейнер, обрезая края изображения */
-}
-.founder-photo img {
-    width: 100%;
-    height: auto;  
-    object-fit: cover;  
-    display: block;
+    background-position: left top; 
+    background-size: 43%;
+    min-height: 840px;
 }
 .founder-content{
     max-width: 720px;
@@ -668,8 +658,7 @@ a{
     justify-content: flex-end;
     padding: 50px;
 }
-.blog-card::before,
-.research-card::before{
+.blog-card::before{
     content:'';
     position: absolute;
     width: 100%;
@@ -680,8 +669,8 @@ a{
     z-index: 1;
 }
 .blog-card {
-    position: relative; /* Добавьте это */
-    overflow: hidden; /* Добавьте это */
+    position: relative; 
+    overflow: hidden;
 }
 .blog-card-image,
 .research-card-image{
@@ -755,6 +744,7 @@ a{
 .cta-form{
     max-width: 840px;
     margin-top: -30px;
+    width: 100%;
 }
 .cta-form-title{
     margin-bottom: 0;
@@ -1154,13 +1144,14 @@ a{
 .about-features{
     display: flex;
     min-height: 168px;
+    width: 100%;
     padding: 0;
     margin-top: 100px;
     margin-bottom: 0rem;
     list-style: none;
     color: #fff;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 .header-about-item{
     padding: 30px 50px;
@@ -1170,15 +1161,12 @@ a{
     flex: 1; 
 }
 .about-buttons{
-    display: none;
-}
-/*.about-buttons{
-    display: none; /* скрываем по умолчанию 
-    justify-content: space-between; /* кнопки по краям 
+    display: none; 
+    justify-content: space-between;
     width: 100%;
-    margin-top: -0.625rem; /* отступ от слайдера 
-    gap: 1.25rem; /* расстояние между кнопками внутри контейнера 
-} */
+    margin-top: -0.625rem; 
+    gap: 1.25rem; 
+}
 .about-button-prev,
 .about-button-next {
     flex: 1; /* чтобы кнопки растягивались равномерно */
@@ -1195,7 +1183,7 @@ a{
     width: 2.25rem;
     height: 1.5rem;
     stroke: #333; /* цвет линий стрелки */
-    fill: #333;   /* цвет заливки, если есть */
+    fill: #333;   /* цвет заливки */
 }
 .header-about-text{
     font-weight: 400;
@@ -1262,24 +1250,39 @@ a{
 
 /* О компании Исследовательский центр */
 .research {
-    overflow: visible;
+    overflow: hidden;
+    position: relative;
 }
-.research .container {
+.research .container{
     overflow: visible;
     position: relative;
 }
-.research-slider {
-    overflow: hidden;   
-    padding-left: 0;  
+.research-slider{
+    position: relative;
+    width: 100vw; 
+    left: 50%;
+    transform: translateX(-50%); /* центрируем */  
+    overflow: visible;
 }
 .research .swiper,
 .research .swiper-wrapper{
     overflow: visible !important;
 }
-.research-card {
-    width: auto;      /* авто-ширина для подгонки под slidesPerView */
+/* .research-card {
+    width: 100%; 
+    flex-shrink: 0;
+} */
+/* .research-slider .swiper-slide {
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+} */
+.research-card,
+.research-slider .swiper-slide {
+    flex-shrink: 0; /* не сжимать */
+    width: auto; /* позволяем Swiper задавать ширину через slidesPerView */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
-
 .research-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1303,6 +1306,12 @@ a{
     line-height: 1.6;
     margin-top: 0rem;
     margin-bottom: 2rem;
+}
+.research-slider-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25rem;
 }
 
 /*Собственные торговые марки*/
@@ -1341,7 +1350,6 @@ a{
     line-height: 160%;
     color: rgba(92, 142, 230, 1);
 }
-
 /* Автомобильная химия*/
 .auto-chemistry .container {
     display: flex;
@@ -1399,7 +1407,7 @@ a{
 
 /*Слайдер*/
 .chemistry-features{
-    display: flex;
+    /* display: flex; */
     min-height: 168px;
     padding: 0;
     margin-top: 100px;
@@ -1407,29 +1415,22 @@ a{
     list-style: none;
     color: #fff;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 .header-chemistry-item{
     padding: 30px 50px;
     height: auto;
-    max-width: 330px; 
+    /* max-width: 330px;  */
     border: .0625rem solid rgba(235, 235, 240, 0.2);
     flex: 1; 
 }
-.chemistry-buttons {
-    display: none;
-    height: 2.75rem;
-    /* border: .0625rem solid rgba(235, 235, 240, 0.2); */
-    justify-content: center;
-    gap: .625rem;   
-}
-/* .chemistry-buttons{
-    display: none; /* скрываем по умолчанию 
-    justify-content: space-between; /* кнопки по краям 
+.chemistry-buttons{
+    display: none; 
+    justify-content: space-between; /* кнопки по краям */
     width: 100%;
-    margin-top: -0.625rem; /* отступ от слайдера 
-    gap: 1.25rem; /* расстояние между кнопками внутри контейнера 
-} */
+    margin-top: -0.625rem; /* отступ от слайдера */
+    gap: 1.25rem; /* расстояние между кнопками внутри контейнера */
+}
 .chemistry-button-prev,
 .chemistry-button-next {
     flex: 1; /* чтобы кнопки растягивались равномерно */
@@ -1445,9 +1446,16 @@ a{
     display: block;
     width: 2.25rem;
     height: 1.5rem;
-    stroke: #333; /* цвет линий стрелки */
-    fill: #333;   /* цвет заливки, если есть */
-
+    stroke: #333; 
+    fill: #333;  
+}
+.header-chemistry-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    margin-bottom: 0;
+    margin-top: 16px;
+    letter-spacing: .0125rem;
 }
 .custom-color .header-chemistry-text{
     color: #292D33;
@@ -1546,6 +1554,83 @@ a{
     margin-bottom: 1.375rem;
 }
 
+/*Блог*/
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+.articles-card {
+    display: flex;
+    position: relative;
+    min-height: 400px;
+    flex-direction: column;
+    text-decoration: none;
+    color:#fff;
+    justify-content: flex-end;
+    padding: 50px;
+    overflow: hidden;
+}
+.articles-card::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(41, 45, 51, 0.6);
+    z-index: 1;
+}
+.articles-card-image{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.articles-card-title {
+    font-style: normal;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: .0063rem;
+    margin-bottom: .25rem;
+    margin-top: 0;
+    z-index: 3;
+}
+.articles-card-text {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: .0063rem;
+    margin-top: .3125rem;
+    margin-bottom: 0;
+    z-index: 3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.pagination .page {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 34px;
+    height: 34px;
+    color: #4A5568;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
 /*hover effects*/
 @media(hover: hover){
     .header-nav-link:hover::after{
@@ -1578,6 +1663,10 @@ a{
     .clients-logo-item:hover{
         filter: grayscale(0%); /* Возвращаем оригинальные цвета */
     }
+    .pagination .page:hover{
+        color: #5c8ee6;
+        border: 1px solid #5c8ee6;
+    }
 }
 @media (max-width: 1700px){
     html{
@@ -1589,7 +1678,16 @@ a{
     .cta-form{
         max-width: 768px;
     }
-    
+    .research-slider {
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .research-text {
+        grid-template-columns: 1fr 1fr;
+        font-size: 16px;
+        width: 100%;
+    }
 } 
 @media (max-width: 1460px){
     html{
@@ -1613,15 +1711,32 @@ a{
     .steps-item:nth-child(2) {
         margin-left: 0;
     }
+    .founder{
+        background-size: 45%;
+    }
+    .founder-content{
+        max-width: 600px;
+    }
     .blog-slider {
         padding-bottom: 3.75rem;
     }
     .cta-image{
-        max-width: 640px;
-        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: -59px;
+        max-width: 450px;
+        width: 43%;
     }
     .cta-form{
-        max-width: 640px;
+        max-width: 600px;
+        width: 50%;
+    }
+    .cta-form-wrapper {
+        padding-left: 2%; 
+    }
+    .notify-text{
+        min-width: 14rem;
+        font-size: .5625rem;    
     }
     .footer-logo{
         width: 200px;
@@ -1655,6 +1770,9 @@ a{
     .about-buttons {
         display: flex;
     }
+    .chemistry-buttons{
+        display: flex;
+    }
     .primary-buttons-wrapper{
     height: 2.5rem;
     }
@@ -1670,18 +1788,25 @@ a{
     .brand{
         grid-template-columns: auto auto;
     }
+    .founder {
+        background-size: 42%;
+    }
     .founder-content{
         max-width: 560px;
     }
     .clients-content{
         flex-basis: 60%;
     }
-    .cta-image{
+    /* .cta-image{
         max-width: 560px;
         width: 50%;
-    }
+    } */
     .cta-image{
         display: none;
+    }
+    .cta-form{
+        max-width: 640px;
+        width: 100%;
     }
     .cta-form-wrapper {
         width: 100%; 
@@ -1706,9 +1831,28 @@ a{
         line-height: 120%;
         margin-right: .9375rem;
     }
+    .footer-menu-column-2{
+        column-gap: 22%;
+    }
+    .footer-menu-wrapper:nth-child(2){
+        margin-left: 16%;
+    }
+    .footer-menu-wrapper:last-child{
+        margin-left: 9%;
+    } 
     .footer-menu-list{
         white-space: nowrap;
     } 
+    .articles-card {
+        padding: 40px;
+        min-height: 360px;
+    }
+    .articles-card-title {
+        font-size: 24px;
+    }
+    .articles-card-text {
+        font-size: 15px;
+    }
 }
 @media (max-width: 992px){
     html{
@@ -1723,6 +1867,9 @@ a{
     .header-logo{
         flex-grow: 1;
         justify-content: center;
+    }
+    .bottles-container{
+        display: none;
     }
     .mobile-menu-toggle{
         width: 80px;
@@ -1836,14 +1983,72 @@ a{
     .brands{
         flex-direction: column;
     }
-    .founder-content{
-        max-width: 512px;
+    .products .container {
+        flex-direction: column;  
+        gap: 3rem;  
+        align-items: center;
+    }
+    .products-photo {
+        order: -1;  
+        flex: none; 
+        width: 100%; 
+        max-width: 30rem;  
+        justify-content: center; 
+        margin-bottom: 1rem; 
+    }
+    .products-photo{
+        width: 100%;  
+    }
+    .products-content-wrapper {
+        width: 100%; 
+        max-width: none;  
+    }
+    .products-chemistry .container {
+        flex-direction: column;  
+        gap: 3rem;  
+        align-items: center;
+    }
+    .products-chemistry-photo{
+        order: -1;  
+        flex: none; 
+        width: 100%; 
+        max-width: 30rem;  
+        justify-content: center; 
+        margin-bottom: 1rem;
+    }
+    .products-chemistry-content-wrapper {
+        width: 100%; 
+        max-width: none;  
+    }
+    .types .container {
+        flex-direction: column;  
+        gap: 3rem;  
+        align-items: center;
+    }
+    .types-chemistry-list {
+        display: grid !important; 
+        grid-template-columns: repeat(2, 1fr);  
+        gap: 1rem;  
+        columns: unset;  /* Сбрасываем columns, если оно конфликтует */
+    }
+    .types-chemistry-list li {
+        padding: .625rem 0 .625rem 1.5625rem;  /* Сохраняем отступы для маркеров */
+        width: 100%;  /* Каждый li на полную ширину колонки */
+    }
+    .founder {
+        background-size: 100%;
+        background-position: center top;
+        min-height: 500px;
+    }
+    .founder-content {
+        max-width: 100%;
+        margin-top: 850px; 
     }
     .clients-wrapper{
         flex-direction: column;
     }
     .cta-form{
-        max-width: 720px;
+        max-width: 840px;
     }
     .footer-logo{
         width: 12.5rem;
@@ -1870,8 +2075,17 @@ a{
     }
     .footer-menu-column-2 {
         grid-template-columns: 1fr;
-        column-gap: 2.1875rem;
+        column-gap: 22px;
     }
+    /* .footer-menu-column-2{
+        column-gap: 22%;
+    } */
+    .footer-menu-wrapper:nth-child(2){
+        margin-left: 1%;
+    }
+    .footer-menu-wrapper:last-child{
+        margin-left: 2%;
+    } 
     .footer-wrapper, .footer-legal{
         display: flex;
         align-items: center;
@@ -1880,29 +2094,53 @@ a{
     }
     .expertise .container {
         display: flex;
-        flex-direction: column; /* 👈 РАСПОЛОЖИТЬ ЭЛЕМЕНТЫ ВЕРТИКАЛЬНО */
+        flex-direction: column;
     }
     .expertise-photo {
-        order: 1; /* 👈 КАРТИНКА ПЕРВОЙ */
+        order: 1; 
         width: 100%;
-        margin-bottom: 1.875rem; /* 👈 ОТСТУП МЕЖДУ КАРТИНКОЙ И ТЕКСТОМ */
+        margin-bottom: 1.875rem; 
     }
     .expertise-content-wrapper {
-        order: 2; /* 👈 ТЕКСТ ВТОРЫМ */
+        order: 2; 
         width: 100%;
+        max-width: none;  
+    }
+    .expertise-content {  
+        width: 100%;  /*  Полная ширина контейнера (960px) */
+        max-width: none;  /*  Сбрасываем 52.5rem/630px */
+    }
+    .expertise-text {  
+        max-width: none;  
+        width: 100%;
+    }
+    .research-text{
+        grid-template-columns: 1fr; 
+        gap: .75rem;
     }
     .auto-chemistry .container {
         display: flex;
-        flex-direction: column; /* 👈 РАСПОЛОЖИТЬ ЭЛЕМЕНТЫ ВЕРТИКАЛЬНО */
+        flex-direction: column; 
     }
     .auto-chemistry-photo {
-        order: 1; /* 👈 КАРТИНКА ПЕРВОЙ */
+        order: 1; 
         width: 100%;
-        margin-bottom: 1.875rem; /* 👈 ОТСТУП МЕЖДУ КАРТИНКОЙ И ТЕКСТОМ */
+        margin-bottom: 1.875rem; 
     }
     .auto-chemistry-content-wrapper {
-        order: 2; /* 👈 ТЕКСТ ВТОРЫМ */
+        order: 2; 
         width: 100%;
+    }
+    .articles-grid {
+        gap: 24px;
+    }
+    .articles-card {
+        padding: 35px;
+        min-height: 320px;
+    }
+    .pagination {
+        justify-content: center;
+        margin-top: 30px;
     }
 }
 @media(max-width: 768px){
@@ -1918,6 +2156,15 @@ a{
     }
     .card{
         flex-basis: 100%;
+    }
+    .founder {
+        background-size: 100%;
+        background-position: center top;
+        min-height: 500px;
+    }
+    .founder-content {
+        max-width: 100%;
+        margin-top: 700px; 
     }
     .founder-photo{
         position: relative;
@@ -1969,13 +2216,18 @@ a{
     .footer-menu-wrapper:last-child {
         margin-left: .5rem;
     }
-    
     .footer-menu-column-2 {
         grid-template-columns: 1fr;
-        column-gap: .625rem;
+        column-gap: .9375rem;
     }
     .footer-menu-item{
         white-space: nowrap;
+    }
+    .footer-menu-title {
+        font-size: 14px;
+    }
+    .footer-menu-link {
+        font-size: 14px;
     }
     .footer-wrapper, .footer-legal{
         display: flex;
@@ -1984,8 +2236,22 @@ a{
         gap: 1.25rem;
         white-space: nowrap;
     }
+    .articles-grid {
+        grid-template-columns: 1fr; /* Одна колонка */
+        gap: 24px;
+    }
+    .articles-card {
+        min-height: 300px;
+        padding: 30px;
+    }
+    .articles-card-title {
+        font-size: 22px;
+    }
+    .articles-card-text {
+        font-size: 15px;
+    }
 }
-@media(max-width: 36rem){
+@media(max-width: 576px){
     .container {
         max-width: 90%;
     }
@@ -1995,74 +2261,59 @@ a{
     .header-content{
         padding-top: 32px;
     }
+    .products-list{
+        columns: 1;
+    }
+    .products-chemistry-list{
+        columns: 1;
+    }
+    .types-chemistry-list {
+        display: grid !important;  
+        grid-template-columns: 1fr;  /* Один столбец на всю ширину */
+        gap: 8px;  /* Отступы между элементами */
+        columns: unset;  /* Сбрасываем columns */
+    }
+    .founder {
+        background-size: 100%;
+        background-position: center top;
+        min-height: 500px;
+    }
+    .founder-content {
+        max-width: 100%;
+        margin-top: 500px; 
+    }
     .brand{
         grid-template-areas: 
         "logo title"
         "text text";
     }
     .clients-list{
-        
         columns: 1;
     }
     .clients-logo-item{
         flex-basis: 50%;
     }
+    .blog-card-title{
+        font-size: 23px;
+    }
+    .blog-card-text{
+        display: none;
+    }
+    .bg-grey {
+        max-height: none; /* Убираем ограничение высоты */
+        min-height: auto;
+    }
+    /* .cta-form {
+        max-width: 100%;
+        margin-top: 0;
+    }
     .cta-form{
         max-width: 560px;
     }
-    .footer-bottom{
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        gap: .9375rem;
-        padding-left: 2.1875rem;
-    }
-    .footer-menu-column-2 {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .footer-menu-item {
-        width: 100%;
-        margin-bottom: .625rem;
-    }
-    .footer-menu-link-bold{
-        margin-left: -0.8125rem;
-    }
-    .footer-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        gap: .625rem;
-        padding-top: 1.25rem;
-        padding-left: 2.9375rem;
+    .input{
+        height: 80%;
+    } */
 
-    }
-    .footer-legal {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        gap: .625rem;
-    }
-    .footer-copyright,
-    .footer-policy,
-    .footer-author {
-        width: 100%;
-        text-align: left;
-        margin: 0; 
-        padding: 0;
-        line-height: 1.2;
-    }   
-}
-@media(max-width: 375px){
-    .header-text{
-        font-size: 14px;
-    }
-    .header-title{
-    line-height: 120%;
-    }
     .cta-form-title {
         font-size: 36px;
         font-weight: 400;
@@ -2087,11 +2338,188 @@ a{
         width: 100%;
         height: 3.875rem;
     }
+    .input-group-label{
+        top: 50%;  
+        left: 30px;  
+        transform: translateY(-50%);
+        font-size: 14px;
+    }
     .cta-form-button {
         width: 100%;
         max-width: 21.5625rem;
         height: 3.875rem;
     }
+    .footer-bottom{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: .9375rem;
+        padding-left: 2.1875rem;
+    } 
+    .footer-menu-column-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-menu-item {
+        width: 100%;
+        margin-bottom: .625rem;
+    }
+    .footer-menu-link-bold{
+        margin-left: -0.8125rem;
+    }
+    .footer-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: .625rem;
+        padding-top: 1.25rem;
+        padding-left: 2.9375rem;
+    }
+    .footer-legal {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: .625rem;
+    }
+    .footer-copyright,
+    .footer-policy,
+    .footer-author {
+        width: 100%;
+        text-align: left;
+        margin: 0; 
+        padding: 0;
+        line-height: 1.2;
+    }   
+    .articles-card {
+        min-height: 260px;
+        padding: 22px;
+    }
+    .articles-card-title {
+        font-size: 20px;
+        line-height: 140%;
+    }
+    .articles-card-text {
+        font-size: 14px;
+    }
+    .pagination .page {
+        min-width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+@media(max-width: 375px){
+    .header-text{
+        font-size: 14px;
+    }
+    .header-features-text{
+        font-size: 14px;
+    }
+    .steps-text{
+        font-size: 14px;
+    }
+    .card-text{
+        font-size: 14px;
+    }
+    .brand-text{
+        font-size: 14px;
+    }
+    .founder-text{
+        font-size: 14px;
+    }
+    .founder {
+        background-size: 100%;
+        background-position: center top;
+        min-height: 500px;
+    }
+    /* .blog-card-text{
+        font-size: 14px;
+    } */
+    .blog-card-title{
+        font-size: 20px;
+    }
+    .cta-form-text{
+        font-size: 14px;
+    }
+    .founder-content {
+        max-width: 100%;
+        margin-top: 400px; 
+    }
+    .clients-list-item{
+        font-size: 14px;
+    }
+    .modal-text{
+        font-size: 14px;
+    }
+    .expertise-text{
+        font-size: 14px;
+    }
+    .header-about-text{
+        font-size: 14px;
+    }
+    .header-chemistry-text{
+        font-size: 14px;
+    }
+    .products-text{
+        font-size: 14px;
+    }
+    .products-chemistry-text{
+        font-size: 14px;
+    }
+    .research-text {
+        font-size: 14px;
+    }
+    .contracts-text{
+        font-size: 14px;
+    }
+    .auto-chemistry-text{
+        font-size: 14px;
+    }
+    .types-text{
+        font-size: 14px;
+    }
+    .policy-text {
+        font-size: 14px;
+    }
+    .footer-menu-link{
+        font-size: 14px;
+    }
+    .cta-form-title {
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 120%;
+        color: #292D33;
+    }
+    .cta-form-text{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 160%;
+    }
+    .input-group-wrapper {
+        flex-direction: column;
+        gap: .9375rem;
+    }
+    /* .cta-form-footer {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+    }
+    .input-group {
+        width: 100%;
+        height: 3.875rem;
+    }
+    .input-group-label{
+        top: 50%;  
+        left: 30px;  
+        transform: translateY(-50%);
+        font-size: 14px;
+    }
+    .cta-form-button {
+        width: 100%;
+        max-width: 21.5625rem;
+        height: 3.875rem;
+    } */
     .footer-top{
         margin-top: 1.875rem;
     }

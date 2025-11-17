@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('✅ Инициализация слайдера "О нас"');
 
-
-    const swiperAboutFeatures = new Swiper('.chemistry-features', {   // 39 https://swiperjs.com/swiper-api#initialize-swiper и https://swiperjs.com/swiper-api#navigation
+    
+    const swiperChemistryFeatures = new Swiper('.chemistry-features', {   // 39 https://swiperjs.com/swiper-api#initialize-swiper и https://swiperjs.com/swiper-api#navigation
         speed: 400,
         // autoHeight: true,
         // loop: true,   
@@ -39,5 +39,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 slidesPerView: 5,
             },
         },
+        
     });
+});
+
+const swiperResearchChemisrty = new Swiper('.research-chemisrty-slider', {
+    speed: 400,
+    loop: false,
+    centeredSlides: false,             
+    navigation: {
+        nextEl: '.chemisrty-button-next',
+        prevEl: '.chemisrty-button-prev',
+    },  
+    slidesPerView: 2.6,
+    spaceBetween: 30,
+    breakpoints: {
+        0: {
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+        },
+        480: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+        },
+        640: {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 1.6,
+            spaceBetween: 25,
+        },
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        1200: {
+            slidesPerView: 2.4,
+            spaceBetween: 30,
+        },
+        1600: {
+            slidesPerView: 2.3,
+            spaceBetween: 30,
+        },
+        1800: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+        },
+    },
 });

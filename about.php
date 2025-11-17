@@ -66,7 +66,7 @@ include_once('header-page.php');?>
                     <p class="header-about-text">Оперативное производство</p>
                 </li>
             </ul>
-        </div> <!-- Окончание Основной блок слайдера -->
+        </div> <!-- Окончание Основной блок слайдера -->  
         <!-- Кнопки навигации вперед-назад -->
         <div class="slider-buttons about-buttons">
             <div class="about-button-prev">

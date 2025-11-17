@@ -57,7 +57,7 @@ const swiperSteps = new Swiper('.swiper-steps', {
 
 const swiperBlog = new Swiper('.blog-slider', {
     speed: 400,
-    slidesPerView: 2, 
+    slidesPerView: 1, 
     spaceBetween: 30,
     navigation: {
         nextEl: '.blog-button-next',
@@ -65,11 +65,11 @@ const swiperBlog = new Swiper('.blog-slider', {
     },
     breakpoints: {
         640: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             spaceBetween: 20
         },
         768: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             spaceBetween: 25
         },
         1024: {

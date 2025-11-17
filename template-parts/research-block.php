@@ -12,9 +12,9 @@
                 </div>
             </div>
         </div>
-        <div class="swiper research-slider">
+        <div class="swiper research-slider research-chemisrty-slider">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper research-slider-wrapper">
             <!-- Slides -->
                 <a href="#" class="swiper-slide research-card">
                     <picture class="research-photo research-card-image">
@@ -45,22 +45,21 @@
                     </picture>
                 </a>
             </div>
-            <div class="research-slider-footer">
+        </div>   
+    </div><!-- /.container -->
+    <div class="research-slider-footer">
                 <a href="#" class="button-link">Весь блог</a>
                     <div class="research-buttons primary-buttons-wrapper">
-                        <div class="research-button-prev primary-button-prev">
+                        <div class="chemisrty-button-prev primary-button-prev">
                             <svg class="arrow-prev" width="30" height="20">
                                 <use href="img/sprite.svg#arrow-prev"></use>
                             </svg>
                         </div>
-                        <div class="research-button-next primary-button-next">
+                        <div class="chemisrty-button-next primary-button-next">
                             <svg class="arrow-next" width="30" height="20">
                                 <use href="img/sprite.svg#arrow-next"></use>
                             </svg>
                         </div>
                     </div> <!-- /.blog-buttons -->
             </div>
-        </div>   
-    </div>
-    <!-- /.container -->
 </section>

@@ -44,30 +44,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const swiperResearch = new Swiper('.research-slider', {
     speed: 400,
-    slidesPerView: 2.2,    
-    spaceBetween: 30,
-    centeredSlides: true,   // Центрируем активный слайд
-    loop: false,            // Чтобы не было бесконечного скролла (по желанию)
+    loop: false,
+    centeredSlides: false,             
     navigation: {
         nextEl: '.research-button-next',
         prevEl: '.research-button-prev',
-    },   
+    },  
+    slidesPerView: 2.6,
+    spaceBetween: 30,
     breakpoints: {
-        640: {
+        0: {
             slidesPerView: 1.1,
-            spaceBetween: 20
+            spaceBetween: 16,
+        },
+        480: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+        },
+        640: {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
         },
         768: {
-            slidesPerView: 1.5,
-            spaceBetween: 25
+            slidesPerView: 1.6,
+            spaceBetween: 25,
         },
         1024: {
-            slidesPerView: 2.2,
-            spaceBetween: 30
+            slidesPerView: 2,
+            spaceBetween: 30,
         },
         1200: {
-            slidesPerView: 2.2,
-            spaceBetween: 30
+            slidesPerView: 2.4,
+            spaceBetween: 30,
+        },
+        1600: {
+            slidesPerView: 2.3,
+            spaceBetween: 30,
+        },
+        1800: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
         },
     },
 });

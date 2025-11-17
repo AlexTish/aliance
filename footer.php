@@ -230,6 +230,8 @@
         <script src="js/sliders.js"></script> <!-- JavaScript для index.php -->
     <?php elseif (basename($_SERVER['PHP_SELF']) === 'about.php'): ?>
         <script src="js/about.js"></script> <!-- JavaScript для about.php -->
+    <?php elseif (basename($_SERVER['PHP_SELF']) === 'auto-chemistry.php'): ?>
+        <script src="js/chemistry.js"></script> <!-- JavaScript для auto-chemistry.php -->
     <?php endif; ?>
 
 
