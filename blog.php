@@ -6,7 +6,7 @@
     <section class="section articles">
         <div class="container">
             <div class="articles-grid">
-                <?php for ($i = 0; $i < 10; $i++): ?>
+                <?php for ($i = 0; $i < 5; $i++): ?>
                     <a href="#" class="articles-card">
                         <picture class="articles-card-image">
                             <source type="image/webp" srcset="img/blog-photo-methodology.webp">
@@ -20,7 +20,7 @@
                             Действия представителей оппозиции, превозмогая сложившуюся непростую экономическую ситуацию...
                         </p>
                     </a>
-                    <a href="#" class="swiper-slide articles-card">
+                    <a href="#" class="articles-card">
                         <picture class="articles-card-image">
                             <source type="image/webp" srcset="img/blog-photo-life.webp">
                             <source type="image/jpeg" srcset="img/blog-photo-life.png">
@@ -38,7 +38,7 @@
                 <a href="#" class="page">2</a>
                 <a href="#" class="page">3</a>
                 <a href="#" class="page">4</a>
-                <a href="#" class="page">›</a>
+                <a href="#" class="page">5</a>
             </div>
         </div>
     </section>

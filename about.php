@@ -144,7 +144,7 @@ include_once('header-page.php');?>
 <!-- /.container -->
 </section>
 <?php $founder_block_title = 'Отношение к делу<br>и к клиентам'; include_once('./template-parts/founder-block.php');?>
-<?php $research_block_title = 'Исследовательский центр<br>Aliance production'; include_once('./template-parts/research-block.php');?>
+<?php $research_block_title = 'Исследовательский центр <br>Aliance production'; include_once('./template-parts/research-block.php');?>
 <?php $clients_block_title = 'Производим аэрозольную продукцию для разных сфер'; include_once('./template-parts/clients-block.php');?>
 <?php include_once('footer.php');?>
 </body>

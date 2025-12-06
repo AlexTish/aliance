@@ -68,7 +68,7 @@ include_once('header-page-image.php');?>
                     <svg class="speed" width="36" height="36">
                         <use href="img/sprite.svg#speed"></use>
                     </svg>
-                    <p class="header-chemistry-text">Оперативное производство</p>
+                    <p class="header-chemistry-text">Оперативное<br>производство</p>
                 </li>
             </ul>
         </div> <!-- Окончание Основной блок слайдера -->
@@ -113,7 +113,7 @@ include_once('header-page-image.php');?>
                     </li>
                     <li class="products-chemistry-list-item">
                         <svg class="products-chemistry-list-icon" width="30" height="30">
-                            <use href="img/sprite.svg#flask"></use>
+                            <use href="img/sprite.svg#him"></use>
                         </svg>
                         Полное описание товаров
                     </li>
@@ -131,7 +131,7 @@ include_once('header-page-image.php');?>
                     </li>
                     <li class="products-chemistry-list-item">
                         <svg class="products-chemistry-list-icon" width="30" height="30">
-                            <use href="img/sprite.svg#flask"></use>
+                            <use href="img/sprite.svg#him"></use>
                         </svg>
                         Химические производства
                     </li>
@@ -143,7 +143,7 @@ include_once('header-page-image.php');?>
                     </li>
                     <li class="products-chemistry-list-item">
                         <svg class="products-chemistry-list-icon" width="30" height="30">
-                            <use href="img/sprite.svg#flask"></use>
+                            <use href="img/sprite.svg#him"></use>
                         </svg>
                         Химические производства
                     </li>
@@ -183,7 +183,7 @@ include_once('header-page-image.php');?>
                         Высокотемпературная смазка
                     </li>
                     <li class="types-chemistry-list-item">
-                        Универсальный очиститель деталей
+                        Универсальный очиститель<br>деталей
                     </li>
                     <li class="types-chemistry-list-item">
                         Силиконовая смазка
@@ -198,7 +198,7 @@ include_once('header-page-image.php');?>
                         Графитовая смазка
                     </li>
                     <li class="types-chemistry-list-item">
-                        Очиститель кондиционера пенный
+                        Очиститель кондиционера<br>пенный
                     </li>
                     <li class="types-chemistry-list-item">
                         Очиститель тормозных дисков
@@ -210,7 +210,7 @@ include_once('header-page-image.php');?>
                         Очиститель кондционера
                     </li>
                     <li class="types-chemistry-list-item">
-                        Очиститель дросельной заслонки
+                        Очиститель дросельной<br>заслонки
                     </li>
                     <li class="types-chemistry-list-item">
                         Очиститель обивки 
@@ -235,7 +235,7 @@ include_once('header-page-image.php');?>
         </div>
     </div>
 </section>
-<?php $research_block_title = 'Исследовательский центр<br>Aliance production'; include_once('./template-parts/research-block.php');?>
+<?php $research_block_title = 'Исследовательский центр <br>Aliance production'; include_once('./template-parts/research-block.php');?>
 <?php $workflow_block_title = "Cхема работы"; include_once('./template-parts/workflow-block.php');?>
 <?php $clients_block_title = "Производим аэрозольную продукцию для разных сфер"; include_once('./template-parts/clients-block.php');?>
 <?php include_once('footer.php');?>

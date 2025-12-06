@@ -16,7 +16,7 @@ const swiper = new Swiper('.features-slider', {   // 39 https://swiperjs.com/swi
 
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 1.1,
         },
         // when window width is >= 480px
         768: {
