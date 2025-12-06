@@ -2365,6 +2365,12 @@ a{
         max-width: 21.5625rem;
         height: 3.875rem;
     }
+    .footer-info-address{
+        font-size: 14px;
+    }
+    .footer-info{
+        font-size: 14px;
+    }
     .footer-bottom{
         display: flex;
         flex-direction: column;
